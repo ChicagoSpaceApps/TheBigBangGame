@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<title>The Big Bang Game</title>
+	<link rel="shortcut icon" href="Pictures/Ico/buhb-uhlz-ico.ico?v=2">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="Pictures/Ico/buhb-uhlz-ico.ico?v=2">
+	<link rel="icon" type="image/png" sizes="196x196" href="Pictures/Ico/buhb-uhlz-ico-192.png?v=2">
+	<link rel="icon" type="image/png" sizes="160x160" href="Pictures/Ico/buhb-uhlz-ico-160.png?v=2">
+	<link rel="icon" type="image/png" sizes="96x96" href="Pictures/Ico/buhb-uhlz-ico-96.png?v=2">
+	<link rel="icon" type="image/png" sizes="64x64" href="Pictures/Ico/buhb-uhlz-ico-64.png?v=2">
+	<link rel="icon" type="image/png" sizes="32x32" href="Pictures/Ico/buhb-uhlz-ico-32.png?v=2">
+	<link rel="icon" type="image/png" sizes="16x16" href="Pictures/Ico/buhb-uhlz-ico-16.png?v=2">
+	<link rel="apple-touch-icon" href="Pictures/Ico/buhb-uhlz-ico-57.png?v=2">
+	<link rel="apple-touch-icon" sizes="114x114" href="Pictures/Ico/buhb-uhlz-ico-114.png?v=2">
+	<link rel="apple-touch-icon" sizes="72x72" href="Pictures/Ico/buhb-uhlz-ico-72.png?v=2">
+	<link rel="apple-touch-icon" sizes="144x144" href="Pictures/Ico/buhb-uhlz-ico-144.png?v=2">
+	<link rel="apple-touch-icon" sizes="60x60" href="Pictures/Ico/buhb-uhlz-ico-60.png?v=2">
+	<link rel="apple-touch-icon" sizes="120x120" href="Pictures/Ico/buhb-uhlz-ico-120.png?v=2">
+	<link rel="apple-touch-icon" sizes="76x76" href="Pictures/Ico/buhb-uhlz-ico-76.png?v=2">
+	<link rel="apple-touch-icon" sizes="152x152" href="Pictures/Ico/buhb-uhlz-ico-152.png?v=2">
+	<link rel="apple-touch-icon" sizes="180x180" href="Pictures/Ico/buhb-uhlz-ico-180.png?v=2">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="Pictures/Ico/buhb-uhlz-ico-144.png?v=2">
+	<meta name="msapplication-config" content="Pictures/Ico/browserconfig.xml">
+	
+	<style>
+		html {
+			height:100%; /* Mobile Chrome needs it */
+			min-height:100%; /* Mobile Chrome needs it */
+		}
+		 
+		body {
+			margin: 0;
+			position: relative;
+			height: 100%;
+			min-height:100%; /* Mobile Chrome needs it */
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			overflow: hidden;
+			font-family: "Baloo", sans-serif-condensed, Impact, sans-serif;
+			font-weight: bold;
+		}
+
+		@font-face {
+			font-family: "Baloo";
+			src: url(Baloo-Regular.ttf) format("truetype");
+		}
+
+		@font-face {
+			font-family: "Electrolize";
+			src: url(Electrolize-Regular.ttf) format("truetype");
+		}
+
+		#logo {
+			font-family: "Baloo", sans-serif-condensed, Impact, sans-serif;
+			font-size: 300%;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 20px;
+			text-shadow: 2px 2px 3px black;
+			color: lightgray;
+		}
+		
+		.infoTextClass {
+			font-family: 'Electrolize', sans-serif;
+			text-shadow: 1px 1px 2px #1a1a1a;
+			color: lightgray;
+		}
+
+		.transparent {
+			background-color: rgba(255,255,255,0.4);
+		}
+
+		#btnStart {
+			margin-bottom: 20px;
+		}
+
+		#start {
+			margin: 0;
+			font-size: 200%;
+		}
+
+		#logoDiv {
+			position: absolute;
+			padding: 0px 10px;
+			font-family: sans-serif;
+			top: 0px;
+			text-align: center;
+			width: 100%;
+			font-size: 75%;
+		}
+
+		#congrats {
+			padding: 50px 0px 20px 0px;
+		}
+
+		#topBar {
+			display: none;
+			width: 100%;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		#topBarRow {
+			display: table-row;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		#gameBox {
+			width: 100%;
+		}
+
+		.bubbles {
+			opacity: 0.9;
+		}
+
+		#centerIt{
+			padding: 0px 20px 0px 20px;
+			width: 80%;
+			max-width: 400px;
+			text-align: center;
+			margin: auto;
+		}
+
+		#copyright {
+			position: absolute;
+			padding-top: 10px;
+			font-family: sans-serif;
+			padding-bottom: 10px;
+			font-size: 75%;
+			bottom: 0px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.noBorders td, .noBorders th {
+			border: none !important;
+			vertical-align: middle !important;
+			padding: 2px 10px 2px 10px;
+			text-align: center;
+		}
+
+		.invisible {
+			opacity: 0;
+		}
+
+		#btnStart {
+			border-radius: 5px;
+		}
+
+		.show {
+			display: initial;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		#energyDisplay, #happinesDisplay {
+			display: table-cell;
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+			width: 50%;
+		}
+
+		.modalDialog {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0,0,0,0.8);
+			z-index: 99999;
+			opacity: 0;
+			-webkit-transition: opacity 400ms ease-in;
+			-moz-transition: opacity 400ms ease-in;
+			transition: opacity 400ms ease-in;
+			pointer-events: none;
+		}
+
+		.modalDialog:target {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		.modalDialogContainer {
+			width: 80%;
+			max-width: 400px;
+			position: relative;
+			margin: 5% auto;
+			padding: 5px 20px 13px 20px;
+			border-radius: 10px;
+			background: white;
+			font-size: 80%;
+		}
+
+		.modalHeader {
+			text-align: center;
+		}
+
+		.close {
+			background: #606061;
+			color: #FFFFFF;
+			line-height: 25px;
+			position: absolute;
+			right: -12px;
+			text-align: center;
+			top: -10px;
+			width: 24px;
+			text-decoration: none;
+			font-weight: bold;
+			-webkit-border-radius: 12px;
+			-moz-border-radius: 12px;
+			border-radius: 12px;
+			-moz-box-shadow: 1px 1px 3px #000;
+			-webkit-box-shadow: 1px 1px 3px #000;
+			box-shadow: 1px 1px 3px #000;
+		}
+
+		.close:hover { background: #00d9ff; }
+
+		.table {
+			width: 100%;
+		}
+
+		.warning {
+			background: rgba(255,0,0,0.4);
+			border: 1px solid red;
+			margin: 10px 20px 10px 20px;
+			padding: 10px;
+		}
+
+		.button {
+			margin: 20px;
+			color: white;
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		.button-green {
+			background: green;
+			border: 1px solid green;
+		}
+
+		.button-blue {
+			background: blue;
+			border: 1px solid blue;
+		}
+
+		.button-red {
+			background: rgba(255,0,0,0.7);
+			border: 1px solid red;
+		}
+		
+		.button-transparent {
+			background: rgba(0,0,0,0);
+			border: 2px solid lightgray;
+		}
+
+		.slider {
+			width: 100%;
+		}
+
+		#typeYourName {
+			text-align: center;
+		}
+
+		.startBubbles {
+			position: absolute;
+			text-align: center;
+			opacity: 0.9;
+			line-height: 0.8;
+		}
+
+		.bubbleText {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			color: rgb(10,10,10);
+		}
+
+		.noStyle {
+			list-style-type: none;
+			padding: 0px;
+		}
+
+		.listInline {
+			display: inline;
+			font-weight: bold;
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		#myProgress {
+			width: 80%;
+			border: 1px solid lightgray;
+			margin: 0px auto;
+		}
+		#myBar {
+			width: 100%;
+			height: 30px;
+			background-color: lightgreen;
+		}
+
+		.topBarText {
+			text-shadow: 1px 1px 2px #1a1a1a;
+			color: lightgray;
+		}
+
+		.adContainer {
+			width: 300px;
+			margin: 20px auto;
+		}
+		
+		.stickToTheBottom {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+	</style>
+	
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	
+  </head>
+  <body>
+  
+	<div id="instructionsModal" class="modalDialog">
+		<div class="modalDialogContainer">
+			<a href="#close" title="Close" class="close" id="btnCloseInstructionsModal">X</a>
+			<h1 class="modalHeader">Mission</h1>
+			<p>Burst the star into Super Nova before it colapses into Black Hole!</p>
+			<p>The faster you catch it, more points you get.</p>
+			<p>Each time you collect additional 10000 pts, The Big Bang happens and new HST picture appears with its descripion. Read carefully, you'll need it later</p>
+			<p>Each start that colapses into Black Hole sucks out portion of your energy and your ability to create new Big Bangs. When your energy drops down to zero you will be asked a question related to one of the HST pictures.</p>
+			<p>If you answer correctly, your energy is back and you can continue the mission. If not, the mission is over.</p>
+			<p>Stars are generated randomly, but the higher the score, stars are generated more frequently</p>
+			<p>Go to Controls to turn sound effects on or off or to adjust the volume.</p>
+			<p> </p>
+			<p>Have Fun!</p>
+			<p> </p>
+		</div>
+	</div>
+	
+	<div id="settingsModal" class="modalDialog">
+		<div class="modalDialogContainer">
+			<a href="#close" title="Close" class="close" id="btnCloseSettingsModal">X</a>
+			<h1 class="modalHeader">Controls</h1>
+			<table class="table noBorders">
+				<tr>
+					<th></th>
+					<th>On</th>
+					<th>Volume</th>
+					<th class="invisible">100</th>
+				</tr>
+				<tr>
+					<td>Background Audio:</td>
+					<td>
+						<input type="checkbox" name="bgSwitch" id="bgSwitch" disabled>
+					</td>
+					<td><input class="slider" type="range" id="bgVolume" min="0" max="0" step="0" value="0" disabled></td>
+					<td id="bgVolValue"></td>
+				</tr>
+				<tr>
+					<td>Bubble Plop Audio:</td>
+					<td>
+						<input type="checkbox" name="plopSwitch" id="plopSwitch" checked>
+					</td>
+					<td><input class="slider" id="plopVolume" min="0" max="100" step="1" type="range" value="100"/></td>
+					<td id="plopVolValue"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div id="scoreBoardModal" class="modalDialog">
+		<div class="modalDialogContainer">
+			<a href="#close" title="Close" class="close" id="btnCloseScoreBoardModal">X</a>
+			<h1 class="modalHeader">Ranks</h1>
+			<table id="scoreBoardTable" class="table noBorders">
+						
+			</table>
+			<div class="hidden" id="deleteScoreBoardWarning">
+				<p class="warning">Are you sure?</p>
+			</div>
+			<button type="button" class="button button-red show" id="btnClearScoreBoard">Clear Ranks</button>
+			<button type="button" class="button button-red hidden" id="btnYes">Yes</button>
+			<button type="button" class="button button-green hidden" id="btnNo">No</button>
+		</div>
+	</div>
+	
+	<div id="gameOverModal" class="modalDialog">
+		<div class="modalDialogContainer">
+			<a href="#close" title="Close" class="close" id="btnCloseGameOverModal">X</a>
+			<!--<a class="close" id="btnShowAd">X</a>-->
+			<div class="show" id="gameOverContent">
+				<h1 class="modalHeader">Great!!!!</h1>
+				<p class="modalHeader">You last score is <span id="scoreModal"></span> !</p>
+				<div id="typeYourName"></div>
+				<p> </p>
+				<table id="gameOverTable" class="table noBorders">
+					
+				</table>
+				<p> </p>
+				<button type="button" class="button button-blue hidden" id="btnPublish"><a href="#close" style="text-decoration: none; color: white;">Publish your best score on Facebook</a></button>
+			</div>
+			<div class="hidden adContainer" id="adContent">	
+				<!--ad here-->
+			</div>
+		</div>
+	</div>
+	
+	<div id="topBar">
+		<div id="topBarRow">
+			<div id="energyDisplay">
+				<p class="topBarText" style="margin-bottom: 0px;">ENERGY</p>
+				<div id="myProgress">
+					<div id="myBar"></div>
+				</div>
+			</div>
+			<div id="happinesDisplay">
+				<p class="topBarText" style="margin-bottom: 0px;">SCORE</p>
+				<h2 class="topBarText" id="score" style="margin: 0px auto;">0</h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="hidden" id="gameBox"></div>
+	
+	<div id="logoDiv" style="padding:20px">
+		<div style="display:inline-block; vertical-align:middle;">
+			<img src="nasa-logo.svg" alt="NASA Logo"></img>
+		</div>
+		<div id="logo" style="display:inline-block; vertical-align:middle; padding-left:20px;">The Big Bang Game</div>
+	</div>
+	
+	<div id="infoTextHolder" class="stickToTheBottom hidden" style="padding:20px">
+		<h1 id="infoTitle" class="infoTextClass" style="font-size: 200%"><h1>
+		<p></p>
+		<p id="infoText" class="infoTextClass" style="font-size: 60%"></p>
+		<button type="button" class="button button-blue" id="btnBackToGame">Continue Mission</button>
+	</div>
+	
+	<div id="qaHolder" class="stickToTheBottom hidden" style="padding:20px">
+		<h1 id="question" class="infoTextClass" style="font-size: 200%"><h1>
+		<p></p>
+		<button type="button" class="button answerButton button-transparent" id="btnA1" value="1" onclick="answerClicked(1)"></button><br>
+		<button type="button" class="button answerButton button-transparent" id="btnA2" value="2" onclick="answerClicked(2)"></button><br>
+		<button type="button" class="button answerButton button-transparent" id="btnA3" value="3" onclick="answerClicked(3)"></button><br>
+		<button type="button" class="button answerButton button-transparent" id="btnA4" value="4" onclick="answerClicked(4)"></button>
+	</div>
+	
+	<div class="startBubbles hidden" id="btnStart" style="background: radial-gradient(farthest-side at 30% 30%,white,darkgreen);">
+		<div class="bubbleText">Lounch</div>
+	</div>
+
+	<div class="startBubbles menuBubbles hidden" id="btnInstructions" style="background: radial-gradient(farthest-side at 30% 30%,white,orange);">
+		<div class="bubbleText">Mission</div>
+	</div>
+
+	<div class="startBubbles menuBubbles hidden" id="btnSettings" style="background: radial-gradient(farthest-side at 30% 30%,white,sandybrown);">
+		<div class="bubbleText">Controls</div>
+	</div>
+
+	<div class="startBubbles menuBubbles hidden" id="btnScores" style="background: radial-gradient(farthest-side at 30% 30%,white,magenta);">
+		<div class="bubbleText">Ranks</div>
+	</div>
+
+	<div class="hidden" id="bigBang" style="background: radial-gradient(circle,white 20%,rgba(0,0,0,0) 40%);">
+	</div>
+
+	<script type="text/javascript">
+	
+		var startWindow = true;
+		
+		var infoData = [];
+		infoData.push(['1','Nebula IRAS 05437+2502','A nebula is a giant cloud of dust and gas in space. Some nebulae (more than one nebula) come from the gas and dust thrown out by the explosion of a dying star, such as a supernova. Other nebulae are regions where new stars are beginning to form. For this reason, some nebulae are called "star nurseries."','What is Nebula?','Other name for Galaxy','New born star','A giant cloud o dust and gas in space','A blob surrounding the Black hole',3]);
+		infoData.push(['2','Planetary nebula NGC 3918','A planetary nebula is created when a star blows off its outer layers after it has run out of fuel to burn. ... About 200 years ago, William Herschel called these spherical clouds planetary nebulae because they were round like the planets.','Who came up with name "Planetary Nebula"?','William Hershel','Albert Einstein','Max Planck','Edwin Hubble',1]);
+		infoData.push(['3','Cluster of Galaxies','A galaxy cluster, or cluster of galaxies, is a structure that consists of anywhere from hundreds to thousands of galaxies that are bound together by gravity. Their immense gravitational influence means they distort the space-time around them, causing them to act like giant zoom lenses. The light of background galaxies is warped and magnified as it passes through the galaxy cluster, allowing astronomers insight into the distant — and therefore early — universe.','What kind of force bounds galaxies in a cluster?','Gods hand','Microwave radiaton','Telepathy','Gravity',4]);
+		infoData.push(['4','Burst of Celestial Fireworks','The nebula, located 20,000 light-years away in the constellation Carina, contains a central cluster of huge, hot stars, called NGC 3603. Star clusters like NGC 3603 provide important clues to understanding the origin of massive star formation in the early, distant universe. Appearing colorful and serene, this environment is anything but. Ultraviolet radiation and violent stellar winds have blown out an enormous cavity in the gas and dust enveloping the cluster.','Where is Hubble Space Telescope located','Puertorico','In the Earth\'s orbit','Mt. Rushmore, USA','China',2]);
+		infoData.push(['5','Galaxy with Threads of Blue','The central galaxy streaked with color, IC 4870, was discovered by DeLisle Stewart in 1900 and is located approximately 28 million light-years away. It contains an active galactic nucleus: an extremely luminous central region so alight with radiation that it can outshine the rest of the galaxy put together. Active galaxies emit radiation across the complete electromagnetic spectrum, from radio waves to gamma rays, produced by the action of a central supermassive black hole that is devouring material getting too close to it. IC 4870 is also a Seyfert galaxy, a particular kind of active galaxy with characteristic emission lines.','What\'s in the center of Active Galaxy?','Nebula','Empty space','Supermassive black hole','We don\'t know',3]);
+		infoData.push(['6','Galaxy Cluster','Galaxies are not randomly distributed in space; they swarm together, gathered up by the unyielding hand of gravity, to form groups and clusters. The Milky Way is a member of the Local Group, which is part of the Virgo Cluster, which in turn is part of the 100,000-galaxy-strong Laniakea Supercluster.','What is the name of our galaxy?','Andromeda','Silk Road','Sombrero','Milky Way',4]);
+		infoData.push(['7','Galaxy Stuck in the Middle','This pretty, cloud-like object may not look much like a galaxy — it lacks the well-defined arms of a spiral galaxy, or the reddish bulge of an elliptical — but it is in fact something known as a lenticular galaxy. Lenticular galaxies sit somewhere between the spiral and elliptical types; they are disk-shaped, like spirals, but they no longer form large numbers of new stars and thus contain only aging populations of stars, like ellipticals.','What kind of galaxy is Milky Way','Eliptical','Spiral','Lenticular','Spherical',2]);
+		infoData.push(['8','Stellar Nursery','This mayhem is all happening at the heart of the Lagoon Nebula, a vast stellar nursery located 4,000 light-years away, visible in binoculars as merely a smudge of light with a bright core. The giant star, called Herschel 36, is bursting out of its natal cocoon of material, unleashing blistering radiation and torrential stellar winds, which are streams of subatomic particles, that push dust away in curtain-like sheets. This action resembles the Sun bursting through the clouds at the end of an afternoon thunderstorm.','Where the Stelar Nurseries are formed?','In an empty space between galaxies','In an Nebula','In a black hole','We don\'t know',2]);
+		infoData.push(['9','Einstein Ring','With the charming name of SDSS J0146-0929, this is a galaxy cluster — a monstrous collection of hundreds of galaxies all shackled together in the unyielding grip of gravity. The mass of this galaxy cluster is large enough to severely distort the space-time around it, creating the odd, looping curves that almost encircle the center of the cluster. These graceful arcs are examples of a cosmic phenomenon known as an Einstein ring. The ring is created as the light from a distant objects, like galaxies, pass by an extremely large mass, like this galaxy cluster. In this image, the light from a background galaxy is diverted and distorted around the massive intervening cluster and forced to travel along many different light paths toward Earth, making it seem as though the galaxy is in several places at once.','What is Einstein Ring?','Galaxy Cluster','Nebula','Distorted light of distant object passing the massive cluster of galaxies','The efect that happens in the moment of full eclipse of the Sun',3]);
+		infoData.push(['10','Hubble\'s Galaxy Full of Cosmic Lighthouses','A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems. A galaxy is held together by gravity. This enchanting spiral galaxy can be found in the constellation of Ursa Major (the Great Bear). Star-studded NGC 3972 lies about 65 million light-years away from Earth, meaning that the light that we see now left it 65 million years ago, just when the dinosaurs became extinct.','How many stars form the Galaxy?','Hundreds','Less than 10','One with surrounding planets','Billions',4]);
+		infoData.push(['11','Frenzy of Stars','The galaxy is a busy cloud of bright stars, with bright pockets - marking bursts of new star formation - scattered around its edges. IC 4710 is a dwarf irregular galaxy. As the name suggests, such galaxies are irregular and chaotic in appearance, lacking central bulges and spiral arms - they are distinctly different from spirals or ellipticals. It is thought that irregular galaxies may once have been spirals or ellipticals, but became distorted over time through external gravitational forces during interactions or mergers with other galaxies. Dwarf irregulars in particular are important to our overall understanding of galactic evolution, as they are thought to be similar to the first galaxies that formed in the universe.','What type of galaxy is the one on the picture?','Small','Irregular','Eliptical','Active',2]);
+		infoData.push(['12','Lonely Firework Display','Although NGC 1559 appears in the sky near one of our closest galaxy neighbors, the Large Magellanic Cloud (LMC), this is just a trick of perspective. In reality, NGC 1559 is physically nowhere near the LMC in space — in fact, it truly is a loner, lacking the company of any nearby galaxies or membership of any galaxy cluster. Despite its lack of cosmic companions, when this lonely galaxy has a telescope pointed in its direction, it puts on quite a show. NGC 1559 has hosted a variety of spectacular exploding stars called supernovae, four of which we have observed — in 1984, 1986, 2005, and 2009.','What is the name of our closest galaxy neighbor?','Milky Way','Messier 82','Large Magellanic Cloud','Andromeda Galaxy',3]);
+		infoData.push(['13','The Penguin and the Egg','This image of distant interacting galaxies, known collectively as Arp 142, bears an uncanny resemblance to a penguin guarding an egg. Data from NASA\'s Spitzer and Hubble space telescopes have been combined to show these dramatic galaxies in light that spans the visible and infrared parts of the spectrum. This dramatic pairing shows two galaxies that couldn\'t look more different as their mutual gravitational attraction slowly drags them closer together.','What is the popular name for the two galaxies on the picture?','The Penguin and the Egg','The Dog and the Puppy','Mother and Child','Chicken and Hen',1]);
+		infoData.push(['14','Stars Bound Together by Gravity','This image from the NASA/ESA Hubble Space Telescope reveals a glistening and ancient globular cluster named NGC 3201 — a gathering of hundreds of thousands of stars bound together by gravity. NGC 3201 was discovered in 1826 by the Scottish astronomer James Dunlop, who described it as a “pretty large, pretty bright” object that becomes “rather irregular” towards its center. A globular cluster is a spherical collection of stars that orbits a galactic core as a satellite. Globular clusters are very tightly bound by gravity, which gives them their spherical shapes and relatively high stellar densities toward their centers.','How do we call sphericaly shaped dense group od stars?','Nebula','Star Nursery','Solar system','Globular cluster',4]);
+		infoData.push(['15','Hubble’s Barred and Booming Spiral Galaxy','As can be easily seen, UGC 6093 is something known as a barred spiral galaxy — it has beautiful arms that swirl outwards from a bar slicing through the galaxy’s center. It is classified as an active galaxy, which means that it hosts an active galactic nucleus, or AGN: a compact region at a galaxy’s center within which material is dragged towards a supermassive black hole. As this black hole devours the surrounding matter it emits intense radiation, causing it to shine brightly.','What is na Active Galactic Nucleus (AGN)?','Stelar Nursery','Supermassive black hole devouring galactic material around it','Protons and Neutrons tied together','Galactic cluster that forms gravitational lens',2]);
+		
+		var picturesShown = [];
+		var correctAnswer = 0;
+
+		window.onload = initFunc;
+		//window.onresize = resizeFunc;
+
+		//Gradual manual window resize produces multiple resize events.
+		//This function reduces the number of events resize function reacts to.
+		//This speeds up the process and makes it more visual appealing.
+
+		var windowWidth = window.innerWidth;
+		var windowHeight = window.innerHeight;
+		
+		var makeBubbleFlag = true;
+		var updateMyBarFlag = true;
+		var milestone = 10000; //Number of points after new picture and info is shown
+		
+		function resizePeriodReset() {
+			if ((windowWidth != window.innerWidth) || (windowHeight != window.innerHeight)) {
+				resizeFunc(false);
+				windowWidth = window.innerWidth;
+				windowHeight = window.innerHeight;
+			}
+			setTimeout(function(){
+				resizePeriodReset();
+			},200);
+		}
+		resizePeriodReset();
+		
+		function switchBgPicture() {
+			var bgNum = Math.random();
+			bgNum = Math.round(bgNum*14+1);
+			$("body").css('background','url(Pictures/hst_bg_' + bgNum + '.jpg) no-repeat center center fixed');
+			$("body").css('background-size','cover');
+			picturesShown.push(bgNum);
+			return bgNum;
+		}
+		
+		function askQuestion() {
+			var qNum = Math.random();
+			qNum = Math.round((qNum*(picturesShown.length-2)) + 1);
+			qNum = picturesShown[qNum];
+			$("body").css('background','url(Pictures/hst_bg_' + (qNum+1) + '.jpg) no-repeat center center fixed');
+			$("body").css('background-size','cover');
+			$('#question').html(infoData[qNum][3]);
+			$('#btnA1').html(infoData[qNum][4]);
+			$('#btnA2').html(infoData[qNum][5]);
+			$('#btnA3').html(infoData[qNum][6]);
+			$('#btnA4').html(infoData[qNum][7]);
+			correctAnswer = infoData[qNum][8];
+			$("#qaHolder").addClass("show");
+			$("#qaHolder").removeClass("hidden");
+		}
+		
+		function answerClicked(a) {
+			$("#qaHolder").addClass("hidden");
+			$("#qaHolder").removeClass("show");
+			if (a == correctAnswer) {
+				updateMyBarFlag = true;
+				makeBubbleFlag = true;
+				myBar=100;
+				myBarColor(myBar);
+				$("#myBar").css('width', myBar.toString() + '%');
+				makeBubble();
+			} else {
+				endGame();
+			}
+		}
+		
+		function bigBang() {
+			updateMyBarFlag = false;
+			makeBubbleFlag = false;
+			$("div").remove(".bubbles");
+			$("#bigBang").css({
+				"width": "20px",
+				"height": "20px",
+				"border-radius": "10px",
+				"position": "absolute"
+			});
+			$("#bigBang").css({
+				"left": ((window.innerWidth/2) - (parseInt($("#bigBang").css('width'))/2)).toString()+"px",
+				"top": ((window.innerHeight/2) - (parseInt($("#bigBang").css('height'))/2)).toString()+"px"
+			});
+			//To make sure bigBangBubble remains circle
+			if (window.innerHeight >= window.innerWidth) {
+				var size = window.innerHeight * 3;
+			} else {
+				var size = window.innerWidth * 3;
+			}
+			$("#bigBang").addClass("show");
+			$("#bigBang").removeClass("hidden");
+			bigBangAudio.volume = plopVolume;
+			$("#bigBang").animate({
+				left: ((window.innerWidth/2) - (size/2)).toString()+"px",
+				top: ((window.innerHeight/2) - (size/2)).toString()+"px",
+				height: size.toString()+"px",
+				width: size.toString()+"px",
+				// Animation in IE and Firefox will not work properly if each corner border radius is not defined separately 
+				borderTopLeftRadius: (size/2).toString()+"px",
+				borderTopRightRadius: (size/2).toString()+"px",
+				borderBottomLeftRadius: (size/2).toString()+"px",
+				borderBottomRightRadius: (size/2).toString()+"px",
+			},2000,function(){
+				var bgNum = switchBgPicture() - 1;
+				picturesShown.push(bgNum);
+				$("#bigBang").addClass("hidden");
+				$("#bigBang").removeClass("show");
+				$("#infoTextHolder").addClass("show");
+				$("#infoTextHolder").removeClass("hidden");
+				$("#infoTitle").html(infoData[bgNum][1]);
+				$("#infoText").html(infoData[bgNum][2]);
+			});
+			bigBangAudio.play();
+		}
+
+		function endGame(){
+			$("#topBar").css("display", "none");
+			$("#gameBox").removeClass("show");
+			$("#gameBox").addClass("hidden");
+			$(".startBubbles").removeClass("hidden");
+			$(".startBubbles").addClass("show");
+			$("div").remove(".bubbles");
+			var scoreBoard = JSON.parse(localStorage.getItem("happyBoard"));
+			var today = new Date();
+			var table = document.getElementById("gameOverTable");
+			$(table).empty();
+			if (score > scoreBoard[scoreBoard.length - 1][1]){
+				var scoreBoardItem = ["", score, (today.getMonth() + 1 ) + "/" + today.getDate() + "/" + today.getFullYear()];
+				scoreBoard.push(scoreBoardItem);
+				scoreBoard.sort(function(a,b) {return parseInt(b[1]) - parseInt(a[1])});
+				scoreBoard.splice(11,1);
+				newRating = scoreBoard.indexOf(scoreBoardItem) + 1;
+				localStorage.setItem("happyBoard", JSON.stringify(scoreBoard));
+				populateScoreBoardTable(table);
+				colorNewScore();
+				var box = document.getElementById("name_" + newRating);
+				$(box).empty();
+				var input = document.createElement("input");
+				var div = document.getElementById("typeYourName");
+				div.appendChild(input);
+				$(input).prop("type", "text");
+				$(input).prop("placeholder", "Type your name");
+				input.id = "newName";
+				$(input).css("width", "50%");
+				var span = document.createElement("span");
+				div.appendChild(span);
+				var button = document.createElement("button");
+				span.appendChild(button);
+				$(button).prop("type", "button");
+				button.id = "saveName";
+				$(button).html("Save");
+				$(button).click(function() {
+					var scoreBoard = JSON.parse(localStorage.getItem("happyBoard"));
+					scoreBoard[newRating - 1][0] = $("#newName").val();
+					localStorage.setItem("happyBoard", JSON.stringify(scoreBoard));
+					$(table).empty();
+					$(div).empty();
+					populateScoreBoardTable(table);
+					colorNewScore();
+				});
+			}
+			
+			$("#scoreModal").html(score);
+			window.location.href = "#gameOverModal";
+			backgroundAudio.pause();
+			
+		}
+		
+		function initFunc() {
+			
+			makeBubbleFlag = true;
+			
+			/*var bgNum = Math.random();
+			bgNum = Math.round(bgNum*14+1);
+			$("body").css('background','url(Pictures/hst_bg_' + bgNum + '.jpg) no-repeat center center fixed');
+			$("body").css('background-size','cover');*/
+			switchBgPicture();
+			
+			//{$("#logo").css("font-size", "300%");}
+			resizeFunc(true);
+			
+			bigBangAudio = new Audio("Thunder.wav");
+			backgroundAudio = new Audio("whistler3.mp3");
+			//backgroundAudio.loop = true;
+			backgroundAudio.addEventListener('ended', function() {
+				this.currentTime = 0;
+				this.play();
+			}, false);
+			plop = [];
+			for (var i=0; i<5; i++) {
+				plop[i] = new Audio("plop.mp3");
+			}
+			plopIndex = 0;
+			plopIndexModulus = 5;
+			plopVolume = parseInt(document.getElementById("plopVolume").value) / 100;
+			for (var i=0; i<plop.length; i++) {
+				plop[i].volume = plopVolume;
+			}
+			
+			if (localStorage.getItem("settingsInfo") !== null) {
+				var settingsInfo = JSON.parse(localStorage.getItem("settingsInfo"));
+				if (settingsInfo.bgSwitchStatus) {
+					$('#bgSwitch').prop('checked', true);
+				} else {
+					$('#bgSwitch').prop('checked', false);
+				}
+				$("#bgSwitch").val(settingsInfo.bgSwitch);
+				$("#bgVolume").val(settingsInfo.bgVolume);
+				if (settingsInfo.plopSwitchStatus) {
+					$('#plopSwitch').prop('checked', true);
+				} else {
+					$('#plopSwitch').prop('checked', false);
+				}
+				$("#plopSwitch").val(settingsInfo.plopSwitch);
+				$("#plopVolume").val(settingsInfo.plopVolume);
+				initializeVolumeControls(document.getElementById("bgSwitch"), document.getElementById("bgVolume"), document.getElementById("bgVolValue"));
+				initializeVolumeControls(document.getElementById("plopSwitch"), document.getElementById("plopVolume"), document.getElementById("plopVolValue"));
+			}
+			
+			$("#bgVolValue").html($("#bgVolume").val());
+			$("#plopVolValue").html($("#plopVolume").val());
+			
+			if (localStorage.getItem("happyBoard") === null) {
+				initiateScoreBoard();
+			}
+			
+			
+		}
+
+		function initializeVolumeControls(switchButton, volSlider, volValue) {
+			if ($(switchButton).is(':checked')) {
+				$(volSlider).prop("disabled", false);
+				$(volSlider).css("opacity", "1");
+				$(volValue).css("opacity", "1");
+			} else {
+				$(volSlider).prop("disabled", true);
+				$(volSlider).css("opacity", "0.4");
+				$(volValue).css("opacity", "0.4");
+			};
+		}
+
+		function showStartBubbles(element,size,shift,angle,init) {
+			var angle = angle * Math.PI / 180;
+			startSize = size/10;
+			var ratio = 0;
+			if (shift != 0) {
+				ratio = 1;
+			}
+			$(element).css({
+				"width": startSize.toString()+"px",
+				"height": startSize.toString()+"px",
+				"left": ((window.innerWidth/2) - (startSize/2) + (shift * Math.sin(angle))).toString()+"px",
+				"top": ((window.innerHeight/2) + ($('#logoDiv').height() / 2) - (startSize/2) + (shift * Math.cos(angle))).toString()+"px",
+				"border-radius": (startSize/2).toString()+"px",
+				"font-size": (startSize * 0.2).toString()+"px"
+			});
+			$(element).removeClass('hidden');
+			$(element).addClass('show');
+			$(element).animate({
+				left: ((window.innerWidth/2) - (size/2) + (shift * Math.sin(angle))).toString()+"px",
+				top: ((window.innerHeight/2) + ($('#logoDiv').height() / 2) - (size/2) + (shift * Math.cos(angle))).toString()+"px",
+				height: size.toString()+"px",
+				width: size.toString()+"px",
+				// Animation in IE and Firefox will not work properly if each corner border radius is not defined separately 
+				borderTopLeftRadius: (size/2).toString()+"px",
+				borderTopRightRadius: (size/2).toString()+"px",
+				borderBottomLeftRadius: (size/2).toString()+"px",
+				borderBottomRightRadius: (size/2).toString()+"px",
+			},200,function(){
+				if (init === true) {
+					plop[plopIndex].play();
+					plopIndex = (plopIndex + 1) % plopIndexModulus;
+				}
+			});
+			if (element == "#btnFB") {
+				$(element).css("font-size", (size * 0.5).toString()+"px");
+				$('#f').css("transform", "translateY(-25%)");
+			} else {
+				$(element).css("font-size", (size * 0.2).toString()+"px");
+			}
+		}
+
+		function resizeFunc(init) {
+			
+			if (startWindow) {
+				var startWindowBubblsSize = (Math.min(window.innerHeight,window.innerWidth)) * (100/627);
+				var startButtonRatio = 1.2;
+				var smallStartBubblesRatio = 0.8;
+				var smallSize = startWindowBubblsSize * smallStartBubblesRatio;
+				var shift = startWindowBubblsSize * ((smallStartBubblesRatio * 2) + startButtonRatio) / 2
+				var waitTime = 75;
+				showStartBubbles("#btnStart",startWindowBubblsSize * startButtonRatio,0,0,init);
+				setTimeout(function(){
+					showStartBubbles("#btnInstructions",smallSize,shift,-165,init);
+					setTimeout(function(){
+						showStartBubbles("#btnSettings",smallSize,shift,75,init);
+						setTimeout(function(){
+							showStartBubbles("#btnScores",smallSize,shift,-45,init);
+							},waitTime);
+						},waitTime);
+					},waitTime);
+			}
+			
+		}
+
+		$("#btnStart").click(function(){
+			
+			picturesShown = [];
+			
+			backgroundVolume = parseInt(document.getElementById("bgVolume").value) / 100;
+			plopVolume = parseInt(document.getElementById("plopVolume").value) / 100;
+			backgroundAudio.volume = backgroundVolume;
+			for (var i=0; i<plop.length; i++) {
+				plop[i].volume = plopVolume;
+			}
+			
+			if (backgroundVolume > 0) {
+				backgroundAudio.play();
+			}
+			
+			$("body").css("overflow", "hidden");
+			startWindow = false;
+			size = [window.innerWidth, window.innerHeight];
+			score=0;
+			myBar=100;
+			myBarColor(myBar);
+			$("#myBar").css('width', myBar.toString() + '%');
+			$("#score").html(score);
+			
+			$(".startBubbles").removeClass("show");
+			$(".startBubbles").addClass("hidden");
+			$("#topBar").css("display", "table");
+			$("#gameBox").removeClass("hidden");
+			$("#gameBox").addClass("show");
+			$("#copyright").removeClass("show");
+			$("#copyright").addClass("hidden");
+			$("#logoDiv").removeClass("show");
+			$("#logoDiv").addClass("hidden");
+			
+			if (window.innerWidth<500) $(".scoreBoard").css("font-size","100%");
+
+			gameBoxHeight = window.innerHeight-document.getElementById("topBar").offsetHeight
+			gameBox = document.getElementById("gameBox");
+			gameBox.style.height = gameBoxHeight.toString()+"px";
+			
+			initBubbleSize = (Math.min(gameBoxHeight,window.innerWidth)) * (100/627);
+			
+			bigBang();
+				
+			//makeBubble();
+
+		});
+
+
+		function myBarColor(energy) {
+			if (energy > 50) {
+				$('#myBar').css('background-color', 'lightgreen');
+			} else if (energy <= 50 && energy > 30) {
+				$('#myBar').css('background-color', 'orange');
+			} else {
+				$('#myBar').css('background-color', 'red');
+			}
+		}
+
+		function makeBubble() {
+			
+			if (makeBubbleFlag) {
+				var bLeft=Math.random();
+				bLeft=bLeft*(window.innerWidth-200)+50;
+				
+				var bTop=Math.random();
+				bTop=bTop*(gameBoxHeight-200)+50+document.getElementById("topBar").offsetHeight;
+				
+				var timeSpan=1500-100*Math.min(Math.floor(score/10000),10);
+				var expansionTime=2000-100*Math.min(Math.floor(score/10000),10);
+				
+				var time=Math.random();
+				time=(time*timeSpan)+1;
+				
+				//var colorList = ["white", "yellow", "orange", "red", "green", "blue"];
+				var colorList = ["#00ace7", "#ff6f00", "#e31768", "#ccdb00", "#00974b", "#00486a", "#8200a6"];
+				bubbleColor = Math.random();
+				bubbleColor = Math.round(bubbleColor*6);
+				bubbleColor = colorList[bubbleColor];
+				
+				var bubble = document.createElement("div");
+				var bubbleId=($.now()).toString();
+				bubble.id = bubbleId;
+				bubble.className = "bubbles"
+				gameBox.appendChild(bubble);
+				bubble.style.width = initBubbleSize.toString()+"px";
+				bubble.style.height = initBubbleSize.toString()+"px";
+				bubble.style.position = "absolute";
+				bubble.style.left = bLeft.toString()+"px";
+				bubble.style.top = bTop.toString()+"px";
+				$("#"+bubbleId).css({
+						'background': 'radial-gradient(farthest-side at 30% 30%,white,' + bubbleColor + ')'
+					});
+				// Animation in IE and Firefox will not work properly if each corner border radius is not defied separately
+				bubble.style.borderTopLeftRadius = (initBubbleSize/2).toString()+"px";
+				bubble.style.borderTopRightRadius = (initBubbleSize/2).toString()+"px";
+				bubble.style.borderBottomLeftRadius = (initBubbleSize/2).toString()+"px";
+				bubble.style.borderBottomRightRadius = (initBubbleSize/2).toString()+"px";
+				
+				var movementLeft = Math.random();
+				
+				movementLeft = Math.floor(movementLeft*2*initBubbleSize);
+				var movementTop = Math.round(Math.sqrt(Math.pow(2*initBubbleSize,2) - Math.pow(movementLeft,2)));
+				
+				var signumLeft = Math.round(Math.random())*2-1;
+				var signumTop = Math.round(Math.random())*2-1;
+				
+				movementLeft = movementLeft*signumLeft;
+				movementTop = movementTop*signumTop;
+				
+				var movement = Math.round(Math.random()*9);
+				movement = Math.round(movement/(movement+0.000001));
+				
+				$("#" + bubbleId).animate({
+					left: '-='+(((1-movement)*initBubbleSize/2)+(movement*movementLeft)).toString()+'px',
+					top: '-='+(((1-movement)*initBubbleSize/2)+(movement*movementTop)).toString()+'px',
+					height: (initBubbleSize*2).toString()+'px',
+					width: (initBubbleSize*2).toString()+'px',
+					// Animation in IE and Firefox will not work properly if each corner border radius is not defined separately 
+					borderTopLeftRadius: (initBubbleSize).toString()+'px',
+					borderTopRightRadius: (initBubbleSize).toString()+'px',
+					borderBottomLeftRadius: (initBubbleSize).toString()+'px',
+					borderBottomRightRadius: (initBubbleSize).toString()+'px'
+				},expansionTime,function(){
+					if ($(this).css("display")!="none") {
+						if (myBar > 0 && updateMyBarFlag) {
+							myBar=myBar-20;
+							if (myBar<=0) {
+								myBar=0;
+								updateMyBarFlag = false;
+								makeBubbleFlag = false;
+								$("div").remove(".bubbles");
+								backgroundAudio.pause();
+								askQuestion();
+								
+								return;
+							} else {
+								myBarColor(myBar);
+								$("#myBar").css('width', myBar.toString() + '%');
+								blackHole(this,movement,movementLeft,movementTop,expansionTime);
+							}
+						}
+					} else {
+						$(this).remove();
+					}	
+				});
+				
+				$("#" + bubbleId).on('mousedown', function(e) {
+					e.preventDefault();
+					var startTime = parseFloat($(this).attr("id"));
+					score=score + Math.round((expansionTime - $.now() + startTime)/2);
+					$("#score").html(score);
+					if (myBar>=100) {myBar=100;} else {myBar=myBar+1;};
+					myBarColor(myBar);
+					$("#myBar").css('width', myBar.toString() + '%');
+					burst(this);
+					//If milestone is reached
+					if (Math.floor(score/milestone) > Math.floor((score - Math.round((expansionTime - $.now() + startTime)/2))/milestone)) {
+						bigBang();
+					}
+				});
+				
+				setTimeout(makeBubble,time);
+			}
+		}
+
+		function burst(thisBubble) {
+			$(thisBubble).stop();
+			$(thisBubble).css('opacity','1');
+			$(thisBubble).css('background', 'rgba(255,255,255,0)');
+			var microBubble = document.createElement("div");
+			for (var i=1; i<41; i++) {
+				var mbTop = Math.random();
+				mbTop = Math.round(mbTop * initBubbleSize);
+				var mbLeft = Math.random();
+				mbLeft = Math.round(mbLeft * initBubbleSize);
+				thisBubble.appendChild(microBubble);
+				microBubble.style.width = (initBubbleSize/10).toString()+"px";
+				microBubble.style.height = (initBubbleSize/10).toString()+"px";
+				microBubble.style.position = "absolute";
+				if (mbLeft < initBubbleSize/2) {
+					microBubble.style.left = mbLeft.toString()+"px";
+				} else {
+					microBubble.style.right = mbLeft.toString()+"px";
+				};
+				if (mbTop < initBubbleSize/2) {
+					microBubble.style.top = mbTop.toString()+"px";
+				} else {
+					microBubble.style.bottom = mbTop.toString()+"px";
+				};
+				$(microBubble).css('background-color', bubbleColor);
+				microBubble.style.borderTopLeftRadius = (initBubbleSize/20).toString()+"px";
+				microBubble.style.borderTopRightRadius = (initBubbleSize/20).toString()+"px";
+				microBubble.style.borderBottomLeftRadius = (initBubbleSize/20).toString()+"px";
+				microBubble.style.borderBottomRightRadius = (initBubbleSize/20).toString()+"px";
+				if (i<40) {microBubble = document.createElement("div");};
+			};
+			$(thisBubble).css('border','none');
+			
+			plop[plopIndex].play();
+			plopIndex = (plopIndex + 1) % plopIndexModulus;
+			
+			$(thisBubble).animate({
+				left: '-='+(initBubbleSize/2).toString()+'px',
+				top: '-='+(initBubbleSize/2).toString()+'px',
+				height: (initBubbleSize*3).toString()+'px',
+				width: (initBubbleSize*3).toString()+'px'
+			},150,function() {
+				$(thisBubble).remove()
+			})
+		}
+		
+		function blackHole(thisBubble,movement,movementLeft,movementTop,expansionTime) {
+			$(thisBubble).off('mousedown');
+			$(thisBubble).css({
+					'background': 'radial-gradient(farthest-side at 30% 30%,white,black)',
+					'left': (parseInt($(thisBubble).css('left')) + ((parseInt($(thisBubble).css('width'))-initBubbleSize)/2)).toString()+"px",
+					'top': (parseInt($(thisBubble).css('top')) + ((parseInt($(thisBubble).css('height'))-initBubbleSize)/2)).toString()+"px",
+					'width': initBubbleSize.toString()+"px",
+					'height': initBubbleSize.toString()+"px"
+				});
+			$(thisBubble).animate({
+				left: '-='+(((1-movement)*initBubbleSize/2)+(movement*movementLeft)).toString()+'px',
+				top: '-='+(((1-movement)*initBubbleSize/2)+(movement*movementTop)).toString()+'px',
+				// Animation in IE and Firefox will not work properly if each corner border radius is not defined separately 
+				borderTopLeftRadius: (initBubbleSize).toString()+'px',
+				borderTopRightRadius: (initBubbleSize).toString()+'px',
+				borderBottomLeftRadius: (initBubbleSize).toString()+'px',
+				borderBottomRightRadius: (initBubbleSize).toString()+'px'
+			},expansionTime,function() {
+				blackHole(thisBubble,movement,movementLeft,movementTop,expansionTime);
+			})
+		}
+
+		function closeGameOverModal() {
+			$("#typeYourName").empty();
+			$("#topBar").css("display", "none");
+			$("#gameOverTable").empty();
+			$("#gameBox").removeClass("show");
+			$("#gameBox").addClass("hidden");
+			$("#startDiv").removeClass("hidden");
+			$("#startDiv").addClass("show");
+			$("#copyright").removeClass("hidden");
+			$("#copyright").addClass("show");
+			$("#logoDiv").removeClass("hidden");
+			$("#logoDiv").addClass("show");
+			$("#gameOverContent").removeClass("hidden");
+			$("#gameOverContent").addClass("show");
+			//$("#adContent").removeClass("show");
+			//$("#adContent").addClass("hidden");
+			//$("#btnShowAd").removeClass("hidden");
+			//$("#btnShowAd").addClass("show");
+			//$("#btnCloseGameOverModal").removeClass("show"); Add back when you add the Ads
+			//$("#btnCloseGameOverModal").addClass("hidden"); Add back when you add the Ads
+			backgroundAudio.pause();
+			startWindow = true;
+			initFunc();
+		}
+
+		$("#btnCloseGameOverModal").click(function() {
+			closeGameOverModal();
+		});
+
+		$("#btnBackToGame").click(function() {
+			$("#infoTextHolder").removeClass("show");
+			$("#infoTextHolder").addClass("hidden");
+			updateMyBarFlag = true;
+			makeBubbleFlag = true;
+			makeBubble();
+		});
+		
+		$("#btnCloseSettingsModal").click(function() {
+			var bgA = true;
+			var plopA = true;
+			if ($("#bgSwitch").is(':checked')) {
+				bgA = true;
+			} else {
+				bgA = false;
+			}
+			if ($("#plopSwitch").is(':checked')) {
+				plopA = true;
+			} else {
+				plopA = false;
+			}
+			var settingsInfo = {
+				bgSwitchStatus: bgA,
+				bgSwitch: $("#bgSwitch").val(),
+				bgVolume: $("#bgVolume").val(),
+				plopSwitchStatus: plopA,
+				plopSwitch: $("#plopSwitch").val(),
+				plopVolume: $("#plopVolume").val()
+			};
+			localStorage.setItem("settingsInfo", JSON.stringify(settingsInfo));
+		});
+
+		$("#bgVolume").on("mousemove touchmove change", function() {
+			$("#bgVolValue").html($(this).val());
+		});
+		$("#plopVolume").on("mousemove touchmove change", function() {
+			$("#plopVolValue").html($(this).val());
+		});
+
+		$("#bgSwitch").click(function() {
+			audioOnOff(this, document.getElementById("bgVolume"), document.getElementById("bgVolValue"));
+		});
+
+		$("#plopSwitch").click(function() {
+			audioOnOff(this, document.getElementById("plopVolume"), document.getElementById("plopVolValue"));
+		});
+
+		function audioOnOff(switchButton, volSlider, volValue) {
+			if ($(switchButton).is(':checked')) {
+				$(volSlider).val(parseInt($(switchButton).val()));
+				$(volSlider).prop("disabled", false);
+				$(volSlider).css("opacity", "1");
+				$(volValue).html($(volSlider).val());
+				$(volValue).css("opacity", "1");
+			} else {
+				$(switchButton).val($(volSlider).val());
+				$(volSlider).val(0);
+				$(volSlider).prop("disabled", true);
+				$(volSlider).css("opacity", "0.4");
+				$(volValue).html($(volSlider).val());
+				$(volValue).css("opacity", "0.4");
+			};
+		}
+
+		$("#btnCloseScoreBoardModal").click(function() {
+			$("#scoreBoardTable").empty();
+			$("#deleteScoreBoardWarning").removeClass("show");
+			$("#deleteScoreBoardWarning").addClass("hidden");
+			$("#btnYes").removeClass("show");
+			$("#btnYes").addClass("hidden");
+			$("#btnNo").removeClass("show");
+			$("#btnNo").addClass("hidden");
+			$("#btnClearScoreBoard").removeClass("hidden");
+			$("#btnClearScoreBoard").addClass("show");
+		});
+
+		$("#btnClearScoreBoard").click(function() {
+			if ($("#deleteScoreBoardWarning").hasClass("hidden")) {
+				$("#deleteScoreBoardWarning").removeClass("hidden");
+				$("#deleteScoreBoardWarning").addClass("show");
+				//$("#deleteScoreBoardWarning").css("display", "block");
+				$("#btnClearScoreBoard").removeClass("show");
+				$("#btnClearScoreBoard").addClass("hidden");
+				$("#btnYes").removeClass("hidden");
+				$("#btnYes").addClass("show");
+				$("#btnNo").removeClass("hidden");
+				$("#btnNo").addClass("show");
+			} 
+		});
+
+		$('#btnYes').click(function() {
+			localStorage.removeItem("happyBoard");
+			//$("#deleteScoreBoardWarning").css("display", "none");
+			$("#deleteScoreBoardWarning").removeClass("show");
+			$("#deleteScoreBoardWarning").addClass("hidden");
+			$("#btnYes").removeClass("show");
+			$("#btnYes").addClass("hidden");
+			$("#btnNo").removeClass("show");
+			$("#btnNo").addClass("hidden");
+			$("#btnClearScoreBoard").removeClass("hidden");
+			$("#btnClearScoreBoard").addClass("show");
+			$("#scoreBoardTable").empty();
+			initiateScoreBoard();
+			var table = document.getElementById("scoreBoardTable");
+			populateScoreBoardTable(table);
+		});
+
+		$('#btnNo').click(function() {
+			$("#deleteScoreBoardWarning").removeClass("show");
+			$("#deleteScoreBoardWarning").addClass("hidden");
+			$("#btnYes").removeClass("show");
+			$("#btnYes").addClass("hidden");
+			$("#btnNo").removeClass("show");
+			$("#btnNo").addClass("hidden");
+			$("#btnClearScoreBoard").removeClass("hidden");
+			$("#btnClearScoreBoard").addClass("show");
+		});
+
+		function initiateScoreBoard(){
+			var scoreBoard = [];
+			var scoreBoardItem = ["Unknown", 0, "00/00/00"];
+			for (var i=0; i<10; i++) {
+				scoreBoard.push(scoreBoardItem);
+			}
+			localStorage.setItem("happyBoard", JSON.stringify(scoreBoard));
+		}
+
+		function populateScoreBoardTable(table) {
+			var header = ["", "Name", "Score", "Date"];
+			var scoreBoard = JSON.parse(localStorage.getItem("happyBoard"));
+			for (var i=0; i<11; i++) {
+				var tr = document.createElement("tr");
+				table.appendChild(tr);
+				if (i==0) {
+					for (var j=0; j<4; j++) {
+						var th = document.createElement("th");
+						tr.appendChild(th);
+						$(th).css("padding", "0px 5px 0px 5px");
+						$(th).html(header[j]);
+						if (j==1) {
+							$(th).addClass("text-left");
+						} else {
+							$(th).addClass("text-center");
+						}
+					}
+				} else{
+					
+					var td = document.createElement("td");
+					tr.appendChild(td);
+					$(td).css("padding", "0px 5px 0px 5px");
+					td.id = "rating_" + i;
+					$(td).html(i + ".");
+					$(td).addClass("text-right");
+					
+					var td = document.createElement("td");
+					tr.appendChild(td);
+					$(td).css("padding", "0px 5px 0px 5px");
+					td.id = "name_" + i;
+					$(td).html(scoreBoard[i-1][0]);
+					$(td).addClass("text-left");
+					
+					var td = document.createElement("td");
+					tr.appendChild(td);
+					$(td).css("padding", "0px 5px 0px 5px");
+					td.id = "score_" + i;
+					$(td).html(scoreBoard[i-1][1]);
+					$(td).addClass("text-right");
+					
+					var td = document.createElement("td");
+					tr.appendChild(td);
+					$(td).css("padding", "0px 5px 0px 5px");
+					td.id = "date_" + i;
+					$(td).html(scoreBoard[i-1][2]);
+					$(td).addClass("text-center");
+					
+				}
+			}
+		}
+
+		function colorNewScore() {
+			$("#rating_" + newRating).css("color", "blue");
+			$("#name_" + newRating).css("color", "blue");
+			$("#score_" + newRating).css("color", "blue");
+			$("#date_" + newRating).css("color", "blue");		
+		}
+
+		$('#btnInstructions').click(function() {
+			window.location.href = "#instructionsModal";
+		});
+
+		$('#btnSettings').click(function() {
+			window.location.href = "#settingsModal";
+		});
+
+		$("#btnScores").click(function() {
+			$("#scoreBoardTable").empty();
+			populateScoreBoardTable(document.getElementById("scoreBoardTable"));
+			window.location.href = "#scoreBoardModal";
+		});
+
+		$('#btnFB').click(function() {
+			window.location.href = "#fbModal";
+			checkLoginState();
+		});
+
+		$('#btnPublish').click(function() {
+			closeGameOverModal();
+			var scoreBoard = JSON.parse(localStorage.getItem("happyBoard"));
+			publishMyScore(scoreBoard[0][1]);
+		});
+			
+	</script>
+	
+  </body>
+</html>
